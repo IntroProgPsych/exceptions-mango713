@@ -24,3 +24,17 @@
 # Error: Age must be a positive integer!
 
 # write your code here:
+
+def check_age(age):
+    if not isinstance(age, int) or age < 0:
+        raise ValueError("Age must be a positive integer!")
+    return True
+try:
+    user_age = int(input("Enter your age: "))
+    check_age(user_age)
+except ValueError as e:
+    print(f"Error: {e}")
+else:
+    print("Age accepted.")
+finally:
+    print("End of age check.")
